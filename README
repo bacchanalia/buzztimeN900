@@ -1,0 +1,34 @@
+buzztime.py
+On the Nokia N900 this program will use the phones vibe function
+to represent the time within a 5 minute interval.
+You can set the camera button to initiate buzztime using shortcutd.
+Useful if you feel silly taking out your phone to check the time constantly. 
+
+Time is buzzed out as hours followed by minutes.
+Both hours and minutes are a sequence of three vibes.
+There are three kinds of vibe, which correspond to the numbers 0 - 2
+0 - A long slow vibe        (____)
+1 - A shorter fast vibe     (---)
+2 - Two short fast vibes    (- -)
+For hours:
+    The first vibe changes every 6 hours between 0 and 1
+    The second vibe changes every 2 hours between 0, 1, and 2
+    The third vibe changes every 1 hours between 0 and 1
+    In summary the hour can be calculated as:
+        First * 6 + Second * 2 + Third
+For minutes:
+    The first vibe changes every 30 min between 0 and 1
+    The second vibe changes every 10 min between 0, 1, and 2
+    The third vibe changes every 5 min between 0 and 1
+    In summary the minutes can be calculated as:
+        First * 30 + Second * 10 + Third * 5
+
+Examples:
+    00:00   ____  ____  ____    ____  ____  ____
+    11:55   ---  ---  ---    ---  ---  ---
+    05:35   ____  - -  ---    ---  ____  ---
+
+buzzevery5.py
+This program runs continuously and executes buzztime at the begining of
+every 5 minite interval.
+
